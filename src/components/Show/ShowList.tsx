@@ -1,13 +1,8 @@
-import React from 'react'
+import React from 'react';
+import ShowCard from 'components/Show/ShowCard';
+import LoadingAnimation from 'components/Animations/LoadingAnimation';
+const ShowList = ({ showsObj, loading }) => {
+  return <div>{loading ? <LoadingAnimation /> : showsObj.map((show) => <ShowCard />)}</div>;
+};
 
-
-const ShowList = ({ showsObj }) => {
-
-  return (
-    <div>
-
-    </div>
-  )
-}
-
-export default ShowList
+export default ShowList;

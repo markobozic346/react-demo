@@ -5,7 +5,7 @@ const ShowCard = () => {
 
     return (
         <div>
-
+            show card
         </div>
     )
 }

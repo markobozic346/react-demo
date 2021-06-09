@@ -22,7 +22,7 @@ const Main = (props: Props) => {
     }
     return (
         <>
-            <ShowList showsObj={shows} />
+            <ShowList showsObj={shows} loading={loading} />
         </>
     )
 }
