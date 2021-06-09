@@ -1,15 +1,11 @@
 import React from "react";
-
+import { Box, Stack } from "@chakra-ui/react"
+import { Menu, MenuList, MenuItem } from "@chakra-ui/menu"
 const Header = () => {
-  return <nav>
-    <div className="nav-wrapper blue">
-      <div className='brand-logo'>Demo Project</div>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><a href="test">Home</a></li>
-        <li><a href="test">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  return <Box bg='#245ed1' w='100%' h='50px' p='3' color="white">
+    Demo Project
+    
+  </Box >
 };
 
 export default Header;

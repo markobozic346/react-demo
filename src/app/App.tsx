@@ -1,11 +1,13 @@
 import "./App.css";
-import "materialize-css/dist/css/materialize.min.css"
-import ShowPage from 'app/showPage/ShowPage'
+import { ChakraProvider } from "@chakra-ui/react"
+import Main from 'app/Main'
 function App() {
-  return <div className="App">
-    <ShowPage />
+  return (<div className='App'>
+    <ChakraProvider>
+      <Main />
+    </ChakraProvider>
+  </div>)
 
-  </div>;
 }
 
 export default App;

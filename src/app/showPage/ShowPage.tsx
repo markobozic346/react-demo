@@ -1,15 +1,12 @@
-import React from "react";
-import Header from 'components/Header'
-import Search from 'app/showPage/Search'
-import Footer from 'components/Footer'
-import Main from "app/Main"
+import ShowList from 'app/showPage/ShowList';
+import Search from 'app/showPage/Search';
 const ShowPage = () => {
-  return <div>
-    <Header />
-    <Search />
-    <Main />
-    <Footer />
-  </div>;
-};
+  return (
+    <div>
+      <Search />
+      <ShowList />
+    </div>
+  )
+}
 
 export default ShowPage;

@@ -1,27 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { showsService } from 'services/showService';
-import ShowList from 'app/showPage/ShowList'
+
+
+import ShowPage from 'app/showPage/ShowPage'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 interface Props {
 
 }
 
 const Main = (props: Props) => {
-    const [shows, setShows] = useState([]);
-    const [loading, setLoading] = useState<true | false>(true);
 
-    useEffect(() => {
-        setLoading(true);
-        fetchShows();
-    }, []);
-
-    const fetchShows = async function () {
-        const fetchedShows = await showsService.fetchData();
-        setShows(fetchedShows);
-        setLoading(false);
-    }
     return (
         <>
-            <ShowList shows={shows} loading={loading} />
+            <Header />
+            <ShowPage />
+            <Footer />
         </>
     )
 }
