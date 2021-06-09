@@ -1,5 +1,5 @@
 // import {apiBaseUrl} from 'shared/constants'
-import Show from 'models/Model';
+import Show from 'models/Show';
 class ShowsServices {
 	async fetchData() {
 		//data fetching

@@ -1,9 +1,9 @@
 import "./App.css";
 import "materialize-css/dist/css/materialize.min.css"
-import HomePage from 'app/home/HomePage'
+import ShowPage from 'app/showPage/ShowPage'
 function App() {
   return <div className="App">
-    <HomePage />
+    <ShowPage />
 
   </div>;
 }

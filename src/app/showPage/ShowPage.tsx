@@ -1,15 +1,15 @@
 import React from "react";
 import Header from 'components/Header'
-import Search from 'components/Search'
+import Search from 'app/showPage/Search'
 import Footer from 'components/Footer'
-import Main from "components/Main"
-const HomePage = () => {
+import Main from "app/Main"
+const ShowPage = () => {
   return <div>
     <Header />
-    <Search/>
+    <Search />
     <Main />
     <Footer />
   </div>;
 };
 
-export default HomePage;
+export default ShowPage;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { showsService } from 'services/showService';
-import LoadingAnimation from 'components/Animations/LoadingAnimation';
-import ShowList from 'components/Show/ShowList'
+import ShowList from 'app/showPage/ShowList'
 interface Props {
 
 }
@@ -22,7 +21,7 @@ const Main = (props: Props) => {
     }
     return (
         <>
-            <ShowList showsObj={shows} loading={loading} />
+            <ShowList shows={shows} loading={loading} />
         </>
     )
 }
