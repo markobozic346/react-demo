@@ -2,12 +2,12 @@ import React from "react";
 import Header from 'components/Header'
 import Search from 'components/Search'
 import Footer from 'components/Footer'
-import ShowList from "components/ShowList"
+import Main from "components/Main"
 const HomePage = () => {
   return <div>
     <Header />
     <Search/>
-    <ShowList />
+    <Main />
     <Footer />
   </div>;
 };

@@ -1,4 +1,6 @@
-class Show {
+
+
+class Show  {
     id: number
     title: string
     image: string
