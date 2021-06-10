@@ -3,7 +3,7 @@ import { showsService } from 'services/showService';
 import Show from 'models/Show';
 import ShowCard from 'app/showPage/ShowCard';
 import LoadingAnimation from 'components/animations/LoadingAnimation';
-import { Grid, Center } from '@chakra-ui/react';
+import { SimpleGrid, Center } from '@chakra-ui/react';
 const ShowList = () => {
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -24,9 +24,9 @@ const ShowList = () => {
       {loading ? (
         <LoadingAnimation />
       ) : (
-        <Grid templateColumns="repeat(4, 1fr)" gap="10">
-          {shows.map((show) => <ShowCard key={show.id} />)}
-        </Grid>
+        <SimpleGrid columns={[2, 3, 4]} gap="5">
+          {shows.map((show) => <ShowCard key={show.id} {...show} />)}
+        </SimpleGrid>
       )}
     </Center>
   );

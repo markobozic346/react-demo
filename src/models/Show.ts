@@ -17,13 +17,7 @@ class Show  {
         this.rating= show.rating.average
         
     }
-    get cardInfo() {
-        return {
-             cardTitle: this.title,
-             cardImage: this.image,
-             shortDesc: this.desc
-        }
-    }
+    
 }
 
 export default Show
