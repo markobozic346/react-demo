@@ -1,6 +1,6 @@
 
 
-import ShowPage from 'app/showPage/ShowPage'
+import ShowPage from 'app/shows/ShowPage'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 interface Props {

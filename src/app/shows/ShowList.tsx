@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { showsService } from 'services/showService';
 import Show from 'models/Show';
-import ShowCard from 'app/showPage/ShowCard';
+import ShowCard from 'app/shows/ShowCard'
 import LoadingAnimation from 'components/animations/LoadingAnimation';
 import { SimpleGrid, Center } from '@chakra-ui/react';
-const ShowList = () => {
+const ShowList = ({ search }) => {
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+  // fetch shows
   useEffect(() => {
     setLoading(true);
     fetchShows();
@@ -19,13 +20,18 @@ const ShowList = () => {
     setLoading(false);
   };
 
+  //filter Shows
+  const filteredShows = search !== '' ? shows.filter(show => show.title.toLowerCase().includes(search)) : shows
+
+
+
   return (
     <Center>
       {loading ? (
         <LoadingAnimation />
       ) : (
         <SimpleGrid columns={[2, 3, 4]} gap="5">
-          {shows.map((show) => <ShowCard key={show.id} {...show} />)}
+          {filteredShows.map((show) => <ShowCard key={show.id} {...show} />)}
         </SimpleGrid>
       )}
     </Center>
