@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 
 
-const ShowDetails = () => {
+const ShowDetailsPage = () => {
     const { id } = useParams<{ id: string }>()
 
     return (
@@ -12,4 +12,4 @@ const ShowDetails = () => {
     )
 }
 
-export default ShowDetails
+export default ShowDetailsPage

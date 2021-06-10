@@ -17,7 +17,6 @@ const ShowCard = (props: Show) => {
                     boxShadow: 'rgba(0, 0, 0, 0.29) 0px 4px 9px'
                 }}
             >
-
                 <Image w="280px" h="380px" src={image} />
 
                 <Box position="relative" zIndex={999}>
@@ -31,8 +30,8 @@ const ShowCard = (props: Show) => {
                     </Text>
                 </Box>
             </Box>
-        </Link>
-    );
+		</Link>
+	);
 };
 
 export default ShowCard;

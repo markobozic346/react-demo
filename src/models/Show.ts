@@ -7,6 +7,7 @@ class Show  {
     desc: string
     genres: string[]
     rating: number
+    casts: []
 
     constructor(show){
         this.id= show.id
@@ -15,6 +16,7 @@ class Show  {
         this.desc= show.summary
         this.genres= show.genres
         this.rating= show.rating.average
+        this.casts= show.casts
         
     }
     

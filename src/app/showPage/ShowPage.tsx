@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ShowList from 'app/shows/ShowList'
-import Search from 'app/shows/SearchBar'
+import ShowList from 'app/showPage/ShowList'
+import Search from 'app/showPage/SearchBar'
 const ShowPage = () => {
   const [search, setSearch] = useState<string>('');
   return (
