@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Center } from '@chakra-ui/react'
 const Footer = () => {
-  return <div>Copyright {new Date().getFullYear()}</div>;
+  return <Center>Copyright {new Date().getFullYear()}</Center>;
 };
 
 export default Footer;

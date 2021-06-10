@@ -1,8 +1,6 @@
-
-
+import { Switch, Route } from 'react-router-dom'
 import ShowPage from 'app/shows/ShowPage'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
+import AboutPage from 'app/about/AboutPage'
 interface Props {
 
 }
@@ -11,9 +9,11 @@ const Main = (props: Props) => {
 
     return (
         <>
-            <Header />
-            <ShowPage />
-            <Footer />
+            <Switch>
+                <Route exact path='/' component={ShowPage} />
+                <Route exact path='/about' component={AboutPage} />
+
+            </Switch>
         </>
     )
 }
