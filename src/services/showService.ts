@@ -4,7 +4,7 @@ class ShowsServices {
 	async fetchData() {
 		//data fetching
 
-		// const apiEndpoint = `${apiBaseUrl}/shows` => throws an error
+		// const apiEndpoint = `${apiBaseUrl}/shows` WP: throws error
 		const response = await fetch('https://api.tvmaze.com/shows');
 		// console.log(response)
 		const showsData = await response.json().catch((err) => {
