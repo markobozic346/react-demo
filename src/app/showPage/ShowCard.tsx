@@ -7,10 +7,11 @@ const ShowCard = (props: Show) => {
     const { id, title, image, rating } = props;
 
     return (
-        <Link as={RouterLink} to={`/show/${id}`}>
+        <Link as={RouterLink} _hover={{ textDecoration: 'none' }} to={`/show/${id}`}>
             <Box
                 w="280px"
                 h="460px"
+                bg={(rating > 8.5) ? '#f2f763' : 'white'}
                 borderRadius="lg"
                 borderWidth="1px"
                 _hover={{
@@ -25,13 +26,13 @@ const ShowCard = (props: Show) => {
                             {rating}
                         </Text>
                     </Circle>
-                    <Text fontSize="30" p="10px">
+                    <Text fontSize="30" p="10px" >
                         {title.length > 15 ? `${title.slice(0, 15)}...` : title}
                     </Text>
                 </Box>
             </Box>
-		</Link>
-	);
+        </Link>
+    );
 };
 
 export default ShowCard;

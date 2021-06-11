@@ -4,6 +4,7 @@ import Show from 'models/Show';
 import ShowCard from 'app/showPage/ShowCard'
 import LoadingAnimation from 'components/animations/LoadingAnimation';
 import { SimpleGrid, Center } from '@chakra-ui/react';
+import NoResults from 'components/NoResults';
 const ShowList = ({ search }) => {
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -30,9 +31,11 @@ const ShowList = ({ search }) => {
       {loading ? (
         <LoadingAnimation />
       ) : (
-        <SimpleGrid columns={[2, 3, 4]} gap="5">
-          {filteredShows.map((show) => <ShowCard key={show.id} {...show} />)}
-        </SimpleGrid>
+        (filteredShows.length > 0) ?
+          <SimpleGrid columns={[2, 3, 4]} gap="5">
+
+            {filteredShows.map((show) => <ShowCard key={show.id} {...show} />)}
+          </SimpleGrid> : <NoResults />
       )}
     </Center>
   );
