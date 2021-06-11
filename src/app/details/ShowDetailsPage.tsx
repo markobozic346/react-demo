@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import Show from 'models/Show';
 import { showsService } from 'services/showService';
 import LoadingAnimation from 'components/animations/LoadingAnimation';
-import { Box, Image, Spacer, Text, Flex, Circle } from '@chakra-ui/react';
-import Show from 'models/Show';
+import { Box, Image, Spacer, Flex } from '@chakra-ui/react';
+import ShowDescription from 'components/show/ShowDescription';
+import ShowActors from 'components/show/ShowActors';
+
 const ShowDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
     const [details, setDetails] = useState<Show>();
@@ -18,33 +21,22 @@ const ShowDetailsPage = () => {
     };
     return (
         <div>
-            {details ? (
+            {details ? (<Box>
                 <Flex mx="auto" my="50px" w="80%">
                     <Spacer />
                     <Box>
                         <Image w="340px" h="460px" src={details.image} />
                     </Box>
                     <Spacer />
-                    <Box>
-                        <Text fontSize="3xl" mb="20px">
-                            {details.title}
-                        </Text>
-                        <Flex>
-                            {details.genres.map((genre) => (
-                                <Circle mr='2px' p="5px" bg="gray" color="white" fontSize="sm">
-                                    {genre}
-                                </Circle>
-                            ))}
-                        </Flex>
-                        <Text mt='20px' w="350px" dangerouslySetInnerHTML={{ __html: details.desc }} />
-                    </Box>
+                    <ShowDescription title={details.title} genres={details.genres} desc={details.desc} />
                     <Spacer />
                 </Flex>
+                <ShowActors />
+            </Box>
             ) : (
                 <LoadingAnimation />
-            )
-            }
-        </div >
+            )}
+        </div>
     );
 };
 
