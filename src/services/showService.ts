@@ -21,6 +21,7 @@ class ShowsServices {
 		const actorList = showData._embedded.cast.map(({person, character}) => {return new Actor(person, character)})
 		const show = new Show(showData)
 		show.casts = actorList;
+		return show;
 	}
 }
 

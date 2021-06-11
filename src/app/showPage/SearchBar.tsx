@@ -7,7 +7,6 @@ const Search = ({ setSearch }) => {
         setInputText(value);
         setSearch(value);
     };
-    console.log(inputText)
     return (
         <Box w="300px" mx="auto" my="20px">
             <Input size="lg" placeholder="search movies by title" onChange={(e) => handleChange(e.target.value)} value={inputText} />
