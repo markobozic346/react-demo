@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 import ShowPage from 'app/showPage/ShowPage'
 import AboutPage from 'app/aboutPage/AboutPage'
-import ShowDetailsPage from 'app/details/ShowDetailsPage'
+import ShowDetailsPage from 'app/detailsPage/ShowDetailsPage'
 interface Props {
 
 }
