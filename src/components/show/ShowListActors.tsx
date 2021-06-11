@@ -1,11 +1,11 @@
 import React from 'react'
-import { List, ListItem, Text, Image, Flex, Divider } from "@chakra-ui/react"
+import { List, ListItem, Text, Image, Flex, Divider, Box } from "@chakra-ui/react"
 
 const ShowListActors = ({ casts }) => {
     return (
         <List>
             {casts.map((actor) =>
-                <>
+                <Box key={actor.id}>
                     <Divider />
                     <ListItem mt='2px'>
                         <Flex>
@@ -13,7 +13,7 @@ const ShowListActors = ({ casts }) => {
                             <Text p='10px'>{actor.name}</Text>
                         </Flex>
                     </ListItem>
-                </>
+                </Box>
 
             )}
         </List>

@@ -13,8 +13,8 @@ const ShowDescription = ({ title, genres, desc }: Props) => {
 				{title}
 			</Text>
 			<Flex>
-				{genres.map((genre) => (
-					<Circle mr="2px" p="5px" bg="gray" color="white" fontSize="sm">
+				{genres.map((genre, index) => (
+					<Circle mr="2px" p="5px" bg="gray" color="white" fontSize="sm" key={`${genre}${index}`}>
 						{genre}
 					</Circle>
 				))}

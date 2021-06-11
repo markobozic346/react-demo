@@ -21,7 +21,7 @@ const ShowActors = ({ casts }) => {
                 <Icon w='30px' h='30px' color='#245ed1' as={isGrid ? MdGridOn : MdList} onClick={handleClick} />
 
             </Flex>
-            {isGrid ? <ShowGridActors casts={casts} /> : <ShowListActors casts={casts} />}
+            {isGrid ? <ShowGridActors casts={casts} key={'grid'} /> : <ShowListActors casts={casts} key='list' />}
 
         </Box>
     )
