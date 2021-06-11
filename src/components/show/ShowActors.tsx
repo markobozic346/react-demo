@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import { Box, Flex, Text, Spacer, Icon } from '@chakra-ui/react'
-import ShowGridActors from 'components/show/ShowGridActors'
-import ShowListActors from 'components/show/ShowListActors'
+import ShowActorsGrid from 'components/show/ShowActorsGrid'
+import ShowActorsList from 'components/show/ShowActorsList'
 import { MdGridOn } from 'react-icons/md'
 import { MdList } from 'react-icons/md'
-const ShowActors = ({ casts }) => {
+import Actor from 'models/Actor'
+
+interface Props {
+    casts: Actor[]
+}
+const ShowActors = ({ casts }: Props) => {
     const [isGrid, setIsGrid] = useState<boolean>(true)
 
     const handleClick = () => {
         setIsGrid((prevIsGrid) => !prevIsGrid)
-        console.log(isGrid)
 
     }
 
@@ -21,7 +25,7 @@ const ShowActors = ({ casts }) => {
                 <Icon w='30px' h='30px' color='#245ed1' as={isGrid ? MdGridOn : MdList} onClick={handleClick} />
 
             </Flex>
-            {isGrid ? <ShowGridActors casts={casts} key={'grid'} /> : <ShowListActors casts={casts} key='list' />}
+            {isGrid ? <ShowActorsGrid casts={casts} key={'grid'} /> : <ShowActorsList casts={casts} key='list' />}
 
         </Box>
     )

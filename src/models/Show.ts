@@ -1,5 +1,5 @@
 
-
+import Actor from 'models/Actor'
 class Show  {
     id: number
     title: string
@@ -7,7 +7,7 @@ class Show  {
     desc: string
     genres: string[]
     rating: number
-    casts: []
+    casts: Actor[]
 
     constructor(show){
         this.id= show.id

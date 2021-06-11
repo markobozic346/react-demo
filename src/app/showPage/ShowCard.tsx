@@ -2,9 +2,11 @@ import React from 'react';
 import { Box, Image, Text, Circle, Link } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import Show from 'models/Show';
-// show
-const ShowCard = (props: Show) => {
-    const { id, title, image, rating } = props;
+interface Props {
+    show: Show
+}
+const ShowCard = (props: Props) => {
+    const { id, title, image, rating } = props.show
 
     return (
         <Link as={RouterLink} _hover={{ textDecoration: 'none' }} to={`/show/${id}`}>

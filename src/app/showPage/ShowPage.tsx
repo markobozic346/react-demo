@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import ShowList from 'app/showPage/ShowList'
 import Search from 'components/SearchBar'
 const ShowPage = () => {
-  const [search, setSearch] = useState<string>('');
+  const [searchText, setSearch] = useState<string>('');
   return (
     <div>
-      <Search setSearch={setSearch} />
-      <ShowList search={search} />
+      <Search onSearch={setSearch} />
+      <ShowList searchText={searchText} />
     </div>
   );
 };

@@ -12,13 +12,14 @@ const ShowDetailsPage = () => {
     const [details, setDetails] = useState<Show>();
 
     useEffect(() => {
+        const fetchSingleShow = async () => {
+            const fetchedShow = await showsService.fetchSingleShow(id);
+            setDetails(fetchedShow);
+        };
         fetchSingleShow();
-    }, []);
+    }, [id]);
 
-    const fetchSingleShow = async () => {
-        const fetchedShow = await showsService.fetchSingleShow(id);
-        setDetails(fetchedShow);
-    };
+
     return (
         <div>
             {details ? (
