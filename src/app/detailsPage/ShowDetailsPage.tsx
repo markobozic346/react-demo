@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Show from 'models/Show';
 import { showsService } from 'services/showService';
@@ -10,19 +10,30 @@ import ShowActors from 'components/show/ShowActors';
 const ShowDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
     const [details, setDetails] = useState<Show>();
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchSingleShow = async () => {
-            const fetchedShow = await showsService.fetchSingleShow(id);
-            setDetails(fetchedShow);
-        };
+            setLoading(true)
+            try {
+                const fetchedShow = await showsService.fetchSingleShow(id);
+                setDetails(fetchedShow);
+            }
+            catch (err) {
+                console.log(err)
+            }
+            finally {
+                setLoading(false)
+            }
+        }
+
         fetchSingleShow();
     }, [id]);
 
 
     return (
-        <div>
-            {details ? (
+        <Box>
+            {(details && !loading) ? (
                 <Box>
                     <Flex mx="auto" my="50px" w="80%">
                         <Spacer />
@@ -39,7 +50,7 @@ const ShowDetailsPage = () => {
             ) : (
                 <LoadingAnimation />
             )}
-        </div>
+        </Box>
     );
 };
 

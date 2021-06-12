@@ -11,7 +11,7 @@ const ShowCard = (props: Props) => {
     return (
         <Link as={RouterLink} _hover={{ textDecoration: 'none' }} to={`/show/${id}`}>
             <Box
-                w="280px"
+                minWidth="280px"
                 h="460px"
                 bg={(rating > 8.5) ? '#f2f763' : 'white'}
                 borderRadius="lg"

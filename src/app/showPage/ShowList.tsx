@@ -19,13 +19,21 @@ const ShowList = ({ searchText }: Props) => {
 
   const fetchShows = async function () {
     setLoading(true);
-    const fetchedShows = await showsService.fetchShows();
-    setShows(fetchedShows);
-    setLoading(false);
+    try {
+      const fetchedShows = await showsService.fetchShows();
+      setShows(fetchedShows);
+    }
+    catch (err) {
+      console.log(err)
+    }
+    finally {
+      setLoading(false);
+    }
+
   };
 
   //filter Shows
-  const filteredShows = searchText !== '' ? shows.filter(show => show.title.toLowerCase().includes(searchText)) : shows
+  const filteredShows = searchText !== '' ? shows.filter(show => show.title.toLowerCase().includes(searchText.toLowerCase())) : shows
 
 
 
@@ -35,7 +43,7 @@ const ShowList = ({ searchText }: Props) => {
         <LoadingAnimation />
       ) : (
         (filteredShows.length > 0) ?
-          <SimpleGrid columns={[2, 3, 4]} gap="5">
+          <SimpleGrid columns={[1, 2, 4]} gap="5">
 
             {filteredShows.map((show) => <ShowCard key={show.id} show={show} />)}
           </SimpleGrid> : <NoResults />
